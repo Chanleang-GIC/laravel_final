@@ -20,10 +20,13 @@ jobs:
     - name: Set up PHP
       uses: shivammathur/setup-php@v2
       with:
-        php-version: '8.2'
+        php-version: '8.0'
 
     - name: Install dependencies
       run: composer install
+
+    - name: Check if .env file exists
+      run: test -f .env || cp .env.example .env
 
     - name: Generate application key
       run: php artisan key:generate
@@ -45,4 +48,5 @@ jobs:
         subject: 'Tests Failed on Your Project'
         body: 'Your tests have failed. Check the CI logs for details.'
         to: tongsreng@itc.edu.kh
+
 
