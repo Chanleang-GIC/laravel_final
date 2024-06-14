@@ -20,7 +20,7 @@ jobs:
     - name: Set up PHP
       uses: shivammathur/setup-php@v2
       with:
-        php-version: '8.2'
+        php-version: '8.0'
 
     - name: Install dependencies
       run: composer install
@@ -48,5 +48,6 @@ jobs:
         subject: 'Tests Failed on Your Project'
         body: 'Your tests have failed. Check the CI logs for details.'
         to: tongsreng@itc.edu.kh
+        from: your-email@example.com
 
 
