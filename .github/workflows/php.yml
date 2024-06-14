@@ -41,7 +41,7 @@ jobs:
       if: failure()
       run: |
         echo "Sending email on failure..."
-        echo "Build failed for commit ${GITHUB_SHA}" | mail -s "Build Failed" chanleang7779@gmail.com
+        echo "Build failed for commit ${GITHUB_SHA}" | mail -s "Build Failed" chanleang7779@gmail.com, tongsreng@itc.edu.kh
         git log -1 --pretty=format:"%an" | xargs -I {} echo "Notifying committer {}"
         git show --quiet --pretty=format:%B ${GITHUB_SHA} | mail -s "Build Failure Details" $(git log -1 --pretty=format:"%an" ${GITHUB_SHA})
 
